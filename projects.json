@@ -1,0 +1,74 @@
+[
+	{
+		"url": "",
+		"title": "",
+		"description": "",
+		"keywords": "",
+		"categories": [
+			"",
+			""
+		],
+		"netlify_id": "",
+		"gtm_id": "",
+		"fbpixel_id": "",
+		"repixel_id": "",
+		"google_ads": false,
+		"amazon_ads": false,
+		"other_ads": false,
+		"google_api": {
+			"google_api_client_id": null,
+			"google_api_client_key": null,
+			"google_api_key": null,
+			"google_api_scope": null,
+			"google_api_url": null,
+			"google_api_callback": null
+		},
+		"fonts": {
+			"heading": null,
+			"body": null
+		},
+		"fontawesome": true,
+		"android_app_id": {
+			"free": null,
+			"paid": null
+		},
+		"apple_app_id": {
+			"free": null,
+			"paid": null
+		},
+		"screenshots": [
+			"",
+			"",
+			""
+		],
+		"shortcuts": [],
+		"links": [],
+		"nav": [],
+		"header": {
+			"title": null,
+			"description": null,
+			"image": null,
+			"image_credit": null
+		},
+		"social": {
+			"mailto": null,
+			"facebook": null,
+			"twitter": null,
+			"github": null,
+			"patreon": null,
+			"paypal": null,
+			"portfolio": null,
+			"yelp": null,
+			"tripadvisor": null,
+			"custom": []
+		},
+		"author": {
+			"name": "",
+			"twitter": ""
+		},
+		"redirects": [],
+		"pages": {},
+		"images": [],
+		"modules": []
+	}
+]

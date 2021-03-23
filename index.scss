@@ -1,0 +1,125 @@
+@use "common" as * with (
+	$font-heading: "Merriweather",
+	$font-body: "Merriweather Sans",
+	$color-main: #5BD9D9,
+	$color-main-dark: #3F9BA6,
+	$color-accent: #F6959D,
+	$color-accent-dark: #F26671
+);
+
+.admin {
+	fieldset {
+		margin: $space-large auto;
+	}
+
+	legend {
+		color: $color-accent;
+		font-size: $font-xlarge;
+		font-weight: $font-bold;		
+	}
+	
+	label {
+		span {
+			font-size: $font-xlarge;
+			font-weight: $font-bold;
+		}
+	}
+}
+
+select.font {
+	option[value="Amatic SC"] {
+		font-family: "Amatic SC";
+	}
+	
+	option[value="Arvo"] {
+		font-family: "Arvo";
+	}
+	
+	option[value="Bebas Neue"] {
+		font-family: "Bebas Neue";
+	}
+	
+	option[value="Bitter"] {
+		font-family: "Bitter";
+	}
+	
+	option[value="Bree Serif"] {
+		font-family: "Bree Serif";
+	}
+	
+	option[value="Lato"] {
+		font-family: "Lato";
+	}
+	
+	option[value="Lora"] {
+		font-family: "Lora";
+	}
+	
+	option[value="Merriweather"] {
+		font-family: "Merriweather";
+	}
+	
+	option[value="Montserrat"] {
+		font-family: "Montserrat";
+	}
+	
+	option[value="Nunito"] {
+		font-family: "Nunito";
+	}
+	
+	option[value="Nunito Sans"] {
+		font-family: "Nunito Sans";
+	}
+	
+	option[value="Open Sans"] {
+		font-family: "Open Sans";
+	}
+	
+	option[value="Oswald"] {
+		font-family: "Oswald";
+	}
+	
+	option[value="Oxygen"] {
+		font-family: "Oxygen";
+	}
+	
+	option[value="Pacifico"] {
+		font-family: "Pacifico";
+	}
+	
+	option[value="Playfair Display"] {
+		font-family: "Playfair Display";
+	}
+	
+	option[value="Poppins"] {
+		font-family: "Poppins";
+	}
+	
+	option[value="Quicksand"] {
+		font-family: "Quicksand";
+	}
+	
+	option[value="Raleway"] {
+		font-family: "Raleway";
+	}
+	
+	option[value="Roboto"] {
+		font-family: "Roboto";
+	}
+	
+	option[value="Roboto Slab"] {
+		font-family: "Roboto Slab";
+	}
+	
+	option[value="Rye"] {
+		font-family: "Rye";
+	}
+	
+	option[value="Special Elite"] {
+		font-family: "Special Elite";
+	}
+	
+	option[value="Work Sans"] {
+		font-family: "Work Sans";
+	}
+}
