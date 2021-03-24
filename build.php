@@ -255,7 +255,10 @@ function deploy_project() {
 	if (isset($project_data["url"]) && isset($project_data["netlify_id"])) {
 		echo ($mode == "cli") ? "Deploying project " . $project_data["netlify_id"]  . " v" . $project_data["version"] . " to " . $project_data["url"] : "";
 		exec("netlify deploy --prod --dir=" . dirname(__DIR__) . "/" . $project_data["url"] . " --site=" . $project_data["netlify_id"], $output);
-		$result = in_array("Deploy is live", $output) ? true : false;
+		$needle = "Deploy URL";
+		$result = array_keys(array_filter($output, function($haystack) use ($needle) {
+			return strpos($haystack, $needle) !== false;
+		})) ? true : false;
 		echo ($verbose && ($mode == "cli")) ? "\nDeploying project " . $project_data["url"] . " DONE\n" : "";
 	} else {
 		show_error("URL or Netlify ID missing");
