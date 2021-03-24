@@ -64,7 +64,7 @@ const updateProject = (project, field, value) => {
 
 const generateProject = (project, deploy = false) => {
 
-	showNotification(deploy ? `Deploy ${project}...` : `Building ${project}...`);
+	showNotification(deploy ? `Deploying ${project}...` : `Building ${project}...`);
 
 	let data = new FormData();
 	data.append("project", project);

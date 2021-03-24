@@ -235,6 +235,8 @@ function build_project() {
 		echo ($verbose && ($mode == "cli")) ? "\nProcessing files DONE" . "\nBuilding project " . $project_data["url"] . " DONE\n" : (($mode == "cli") ? " - DONE\n" : "");
 		
 		$result = true;
+	} else {
+		show_error("URL missing");
 	}
 
 	return $result;
@@ -244,17 +246,19 @@ function build_project() {
 function deploy_project() {
 
 	global $project_data;
+	global $mode;
+	global $verbose;
 
-	$result = null;
+	$result = false;
+	$output = array();
 
 	if (isset($project_data["url"]) && isset($project_data["netlify_id"])) {
-		echo "Deploying project " . $project_data["netlify_id"] . " to " . $project_data["url"];
-		echo exec("netlify deploy --prod --dir=" . dirname(__DIR__) . "/" . $project_data["url"] . " --site=" . $project_data["netlify_id"]);
-		echo "\nDeploying project " . $project_data["url"] . " DONE\n";
-		$result = true;
+		echo ($mode == "cli") ? "Deploying project " . $project_data["netlify_id"]  . " v" . $project_data["version"] . " to " . $project_data["url"] : "";
+		exec("netlify deploy --prod --dir=" . dirname(__DIR__) . "/" . $project_data["url"] . " --site=" . $project_data["netlify_id"], $output);
+		$result = in_array("Deploy is live", $output) ? true : false;
+		echo ($verbose && ($mode == "cli")) ? "\nDeploying project " . $project_data["url"] . " DONE\n" : "";
 	} else {
 		show_error("URL or Netlify ID missing");
-		$result = false;
 	}
 
 	return $result;
@@ -373,7 +377,7 @@ function compile_files() {
 
 	if (file_exists(dirname(__DIR__) . "/" . $project_data["url"] . "/style.scss")) {
 		echo $verbose ? "\nCompiling " . $project_data["url"] . "/style.scss to " . $project_data["url"] . "/style.css" : "";
-		echo exec("sass --style=compressed --embed-source-map " . dirname(__DIR__) . "/" . $project_data["url"] . "/style.scss:" . dirname(__DIR__) . "/" . $project_data["url"] . "/style.css");
+		exec("sass --style=compressed --embed-source-map " . dirname(__DIR__) . "/" . $project_data["url"] . "/style.scss:" . dirname(__DIR__) . "/" . $project_data["url"] . "/style.css");
 		echo $verbose ? "\nCompiling " . $project_data["url"] . "/style.css DONE" : "";
 	}
 
@@ -405,7 +409,7 @@ function compile_files() {
 			echo $verbose ? "\n\tCompiling " . $source_file . " to " . $target_file : "";
 
 			// Open the file using PHP
-			echo exec("php " . $source_file . " > " . dirname(__DIR__) . "/" . $target_file);
+			exec("php " . $source_file . " > " . dirname(__DIR__) . "/" . $target_file);
 
 			if (file_exists(dirname(__DIR__) . "/" . $target_file)) {
 				$content_to_minify = file_get_contents(dirname(__DIR__) . "/" . $target_file);
@@ -863,10 +867,10 @@ function generate_favicons() {
 				),
 			);
 			file_put_contents(dirname(__DIR__) . "/" . $project_data["url"] . "/favicon_config.json", json_encode($favicon_data_config, JSON_PRETTY_PRINT));
-			echo exec("real-favicon generate " . dirname(__DIR__) . "/" . $project_data["url"] . "/favicon_config.json favicon_data.json " . dirname(__DIR__) . "/" . $project_data["url"]);
-			echo exec("rm -rf favicon_data.json");
-			echo exec("rm -rf " . dirname(__DIR__) . "/" . $project_data["url"] . "/favicon_config.json");
-			echo exec("rm -rf " . dirname(__DIR__) . "/" . $project_data["url"] . "/site.webmanifest");
+			exec("real-favicon generate " . dirname(__DIR__) . "/" . $project_data["url"] . "/favicon_config.json favicon_data.json " . dirname(__DIR__) . "/" . $project_data["url"]);
+			exec("rm -rf favicon_data.json");
+			exec("rm -rf " . dirname(__DIR__) . "/" . $project_data["url"] . "/favicon_config.json");
+			exec("rm -rf " . dirname(__DIR__) . "/" . $project_data["url"] . "/site.webmanifest");
 			echo $verbose ? "\nGenerating favicons DONE" : " - DONE\n";
 		} else {
 			show_error("favicon.svg missing");
