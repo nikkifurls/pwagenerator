@@ -565,9 +565,15 @@ footer {
 	.container-text,
 	.ad-disclaimer,
 	.image-credit,
+	.tech-credit,
 	.links:not(.list) {
 		font-size: $font-small;
 		text-align: center;
+	}
+
+	.image-credit,
+	.tech-credit {
+		margin: $space-large auto;
 	}
 
 	.container-text {

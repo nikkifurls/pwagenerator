@@ -18,6 +18,8 @@
 			<p class="image-credit"><?php echo $project_data["pages"][$page]["image_credit"] ?></p>
 		<?php } ?>
 
+		<p class="tech-credit">Built with <a href="https://github.com/nikkifurls/pwagenerator" target="_blank" rel="noopener" title="PWA Generator GitHub">PWA Generator</a></p>
+
 		<?php if (!$is_portfolio) { ?>
 			<section class="links">
 				<a href="./disclaimer" target="_blank">Disclaimer</a>
