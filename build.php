@@ -292,7 +292,12 @@ function set_project_version($deploy = false) {
 					$old_version = $project_data["version"];
 					$project_data["version"]++;
 
-					file_put_contents($service_worker_file, str_replace($old_version, $project_data["version"], $file_contents));
+					$position = strpos($file_contents, $old_version);
+					if ($position !== false) {
+						file_put_contents($service_worker_file, substr_replace($file_contents, $project_data["version"], $position, strlen($old_version)));
+					} else {
+						show_error("version could not be found in " . $service_worker_file . " file contents");		
+					}
 				}
 
 			} else {
