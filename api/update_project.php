@@ -17,4 +17,8 @@ if (isset($_POST) && isset($_POST["project"]) && isset($_POST["field"]) && isset
 	$result = api_update_project($project, $field, $value);
 
 	echo json_encode($result);
+
+} else {
+	
+	echo json_encode(false);
 }

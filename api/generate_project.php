@@ -12,4 +12,7 @@ if (isset($_POST) && isset($_POST["project"])) {
 	$result = api_generate_project($project, $deploy);
 
 	echo json_encode($result);
+
+} else {
+	echo json_encode(false);
 }
