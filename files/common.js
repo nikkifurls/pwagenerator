@@ -55,7 +55,7 @@ const showNotification = (text, className = null, cookieName = null) => {
 				// Set text
 				if (notificationText) {
 					if (text == "paypal-confirmation") {
-						text = `Transaction approved! Thank you so much! <span role="img" title="Heart" class="icon icon-heart">&#x2764;</span>`;
+						text = `Transaction approved! Thank you so much! <span role="img" title="Heart" class="icon icon-heart">♥</span>`;
 					} else if (text == "cookie") {
 						text = `Cookies and other tracking technologies are used on this website to improve your browsing experience, analyze website traffic, and show personalized content and targeted ads. By browsing this website, you consent to the use of cookies and other tracking technologies.`;
 					}
@@ -196,7 +196,7 @@ const copyUrl = (url = null) => {
 	if (navigator.clipboard) {
 		navigator.clipboard.writeText(url)
 			.then(() => {
-				showNotification(`<span class="bold">Success! <span role="img" title="Party" class="icon icon-partyface">&#x1F973;</span></span> URL copied to clipboard: <span class="url">${url}</span>`);
+				showNotification(`<span class="bold">Success! <span role="img" title="Party" class="icon icon-partyface">🥳</span></span> URL copied to clipboard: <span class="url">${url}</span>`);
 			})
 			.catch(() => {
 				showNotification(`<span class="bold">Copy URL:</span> <span class="url">${url}</span>`);

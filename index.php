@@ -107,7 +107,7 @@ require_once("build.php");
 	<div class="notification">
 		<div class="container">
 			<p></p>
-			<span role="img" class="close icon icon-close" title="Close">&#x2716;</span>
+			<span role="img" class="close icon icon-close" title="Close">✖️</span>
 		</div>
 	</div>
 
