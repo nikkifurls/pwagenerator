@@ -79,9 +79,9 @@ require_once("build.php");
 												<?php //echo $subfield . ": " . $subvalue ?>
 											<?php } ?>
 										<?php } else if (($field_type == "string") || ($field_type == null)) { ?>
-											<input type="text" id="<?php echo $field ?>" name="<?php echo $field ?>" value="<?php echo $value ?>" />
+											<input type="text" id="<?php echo $field ?>" name="<?php echo $field ?>" value="<?php echo $value ?>">
 										<?php } else if ($field_type == "boolean") { ?>
-											<input type="checkbox" id="<?php echo $field ?>" name="<?php echo $field ?>" <?php echo $value ? "checked" : "" ?> />
+											<input type="checkbox" id="<?php echo $field ?>" name="<?php echo $field ?>" <?php echo $value ? "checked" : "" ?>>
 										<?php } ?>
 
 									</label>

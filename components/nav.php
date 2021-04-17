@@ -3,7 +3,7 @@
 
 		<nav>
 
-			<a href="./" class="logo" title="Home"><img alt="logo" src="logo_nav.svg" /></a>
+			<a href="./" class="logo" title="Home"><img alt="logo" src="logo_nav.svg"></a>
 
 			<?php if (isset($project_data["nav"]) && is_array($project_data["nav"]) && count($project_data["nav"])) { ?>
 

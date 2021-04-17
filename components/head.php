@@ -81,11 +81,11 @@
 <?php } ?>
 
 <?php if (isset($project_data["pages"][$page]["url_full"])) { ?>
-	<link rel="canonical" href="https://<?php echo $project_data["pages"][$page]["url_full"] ?>" />
+	<link rel="canonical" href="https://<?php echo $project_data["pages"][$page]["url_full"] ?>">
 <?php } ?>
 
 <?php if (isset($project_data["pages"][$page]["keywords"])) { ?>
-	<meta name="keywords" content="<?php echo $project_data["pages"][$page]['keywords'] ?>" />
+	<meta name="keywords" content="<?php echo $project_data["pages"][$page]['keywords'] ?>">
 <?php } ?>
 
 <?php if (isset($project_data["pages"][$page]["author"]) && isset($project_data["pages"][$page]["author"]["name"])) { ?>
@@ -107,62 +107,62 @@
 	<meta name="description" content="<?php echo $project_data["pages"][$page]["description"] ?>"/>
 <?php } ?>
 
-<meta name="robots" content="index, follow" />
-<meta property="og:locale" content="en_US" />
-<meta property="og:type" content="website" />
+<meta name="robots" content="index, follow">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
 
 <?php if (isset($project_data["pages"][$page]["title_seo"])) { ?>
-	<meta property="og:title" content="<?php echo $project_data["pages"][$page]["title_seo"] ?>" />
+	<meta property="og:title" content="<?php echo $project_data["pages"][$page]["title_seo"] ?>">
 <?php } ?>
 
 <?php if (isset($project_data["pages"][$page]["description"])) { ?>
-	<meta property="og:description" content="<?php echo $project_data["pages"][$page]["description"] ?>" />
+	<meta property="og:description" content="<?php echo $project_data["pages"][$page]["description"] ?>">
 <?php } ?>
 
 <?php if (isset($project_data["pages"][$page]["url_full"])) { ?>
-	<meta property="og:url" content="https://<?php echo $project_data["pages"][$page]["url_full"] ?>" />
+	<meta property="og:url" content="https://<?php echo $project_data["pages"][$page]["url_full"] ?>">
 <?php } ?>
 
 <?php if (isset($project_data["title"])) { ?>
-	<meta property="og:site_name" content="<?php echo $project_data['title'] ?>" />
+	<meta property="og:site_name" content="<?php echo $project_data['title'] ?>">
 <?php } ?>
 
 <?php if (isset($project_data["social"]["facebook"])) { ?>
-	<meta property="section:publisher" content="https://www.facebook.com/<?php echo $project_data['social']['facebook'] ?>/" />
+	<meta property="section:publisher" content="https://www.facebook.com/<?php echo $project_data['social']['facebook'] ?>/">
 <?php } ?>
 
 <?php if (isset($project_data["pages"][$page]["image"]) && isset($project_data["pages"][$page]["type"]) && ($project_data["pages"][$page]["type"] == "post")) { ?>
-	<meta property="og:image" content="https://<?php echo $project_data["url"] ?>/<?php echo $project_data["pages"][$page]["image"] ?>" />
+	<meta property="og:image" content="https://<?php echo $project_data["url"] ?>/<?php echo $project_data["pages"][$page]["image"] ?>">
 <?php } else { ?>
 	<?php if (file_exists(dirname(__DIR__, 2) . "/" . $project_data["url"] . "/share.jpg")) { ?>
-		<meta property="og:image" content="https://<?php echo $project_data["url"] ?>/share.jpg" />
+		<meta property="og:image" content="https://<?php echo $project_data["url"] ?>/share.jpg">
 	<?php } ?>
 <?php } ?>
 
-<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:card" content="summary_large_image">
 
 <?php if (isset($project_data["pages"][$page]["title_seo"])) { ?>
-	<meta name="twitter:title" content="<?php echo $project_data["pages"][$page]["title_seo"] ?>" />
+	<meta name="twitter:title" content="<?php echo $project_data["pages"][$page]["title_seo"] ?>">
 <?php } ?>
 
 <?php if (isset($project_data["pages"][$page]["description"])) { ?>
-	<meta name="twitter:description" content="<?php echo $project_data["pages"][$page]["description"] ?>" />
+	<meta name="twitter:description" content="<?php echo $project_data["pages"][$page]["description"] ?>">
 <?php } ?>
 
 <?php if (isset($project_data["social"]["twitter"])) { ?>
-	<meta name="twitter:site" content="@<?php echo $project_data['social']['twitter'] ?>" />
+	<meta name="twitter:site" content="@<?php echo $project_data['social']['twitter'] ?>">
 <?php } ?>
 
 <?php if (isset($project_data["pages"][$page]["image"]) && ($project_data["pages"][$page]["type"] == "post")) { ?>
-	<meta name="twitter:image" content="https://<?php echo $project_data["url"] ?>/<?php echo $project_data["pages"][$page]["image"] ?>" />
+	<meta name="twitter:image" content="https://<?php echo $project_data["url"] ?>/<?php echo $project_data["pages"][$page]["image"] ?>">
 <?php } else { ?>
 	<?php if (file_exists(dirname(__DIR__, 2) . "/" . $project_data["url"] . "/share.jpg")) { ?>
-		<meta name="twitter:image" content="https://<?php echo $project_data["url"] ?>/share.jpg" />
+		<meta name="twitter:image" content="https://<?php echo $project_data["url"] ?>/share.jpg">
 	<?php } ?>
 <?php } ?>
 
 <?php if (isset($project_data["author"]["twitter"])) { ?>
-	<meta name="twitter:creator" content="@<?php echo $project_data['author']['twitter'] ?>" />
+	<meta name="twitter:creator" content="@<?php echo $project_data['author']['twitter'] ?>">
 <?php } ?>
 
 <?php
