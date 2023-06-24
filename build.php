@@ -897,7 +897,15 @@ function normalize_data($data, $type = "text") {
 		// $func1 = strtr(utf8_decode($data), utf8_decode("àáâãäçèéêëìíîïñòóôõöùúûüýÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ"), "aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY");
 		// $func2 = iconv("UTF-8", "ASCII//TRANSLIT//IGNORE", $data);
 		
-		$data_normalized = strtolower(iconv("UTF-8", "ASCII//TRANSLIT//IGNORE", strtr(utf8_decode($data), utf8_decode("àáâãäçèéêëìíîïñòóôõöùúûüýÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ"), "aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY")));
+		$data_normalized = strtolower(
+			iconv(
+				"UTF-8", "ASCII//TRANSLIT//IGNORE",
+				strtr(
+					$data,
+					"àáâãäçèéêëìíîïñòóôõöùúûüýÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ","aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY"
+				)
+			)
+		);
 
 		// If URL, replace spaces with dashes
 		if ($type == "url") {
