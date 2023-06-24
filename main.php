@@ -24,12 +24,12 @@ if ($project) { ?>
 	<!DOCTYPE html>
 	<html class="no-js" lang="en">
 
-	<?php require("components/head.php"); ?>
+	<?php require("template-parts/head.php"); ?>
 
 	<body class="<?php echo ($page == "index") ? $page : $project_data["pages"][$page]["type"] . " " . $project_data["pages"][$page]["type"] . "-" . $page ?>">
 
-		<?php require("components/nav.php"); ?>
-		<?php require("components/header.php"); ?>
+		<?php require("template-parts/nav.php"); ?>
+		<?php require("template-parts/header.php"); ?>
 
 		<main role="main">
 			<div class="container">
@@ -66,8 +66,8 @@ if ($project) { ?>
 			</div>
 		</main>
 
-		<?php require("components/footer.php"); ?>
-		<?php require("components/nav.php"); ?>
+		<?php require("template-parts/footer.php"); ?>
+		<?php require("template-parts/nav.php"); ?>
 
 		<div class="notification">
 			<div class="container">
