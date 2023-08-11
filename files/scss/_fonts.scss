@@ -1,0 +1,33 @@
+@use 'layout';
+
+/*
+** Fonts
+*/
+:root {
+	--font-heading: "Roboto Slab";
+	--font-heading-stack: var(--font-heading), Georgia, serif;
+	--font-body: "Roboto";
+	--font-body-stack: var(--font-body), helvetica, arial, sans-serif;
+	--font-small: .8rem;
+	--font-medium: 1rem;
+	--font-large: 1.25rem;
+	--font-xlarge: 1.5rem;
+	--font-xxlarge: 2rem;
+	--font-super: 2.5rem;
+	--font-xsuper: 3rem;
+	--font-xxsuper: 3.5rem;
+	--font-normal: 400;
+	--font-bold: 700;
+};
+
+@mixin font-size($font-size: 1em) {
+	font-size: $font-size;
+
+	@media (min-width: layout.$media-desktop) {
+		font-size: calc(#{$font-size} * 1.25);
+	}
+
+	@media (min-width: layout.$media-desktop-large) {
+		font-size: calc(#{$font-size} * 1.5);
+	}
+}

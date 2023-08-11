@@ -8,7 +8,7 @@
 
 <p>For the purposes of this Disclaimer:</p>
 <ul>
-	<li>Website refers to <a href="https://***URL***">***URL***</a>.</li>
+	<li>Website refers to <a href='https://***URL***'>***URL***</a>.</li>
 	<li>Service refers to the Website.</li>
     <li>Company (referred to as either "the Company", "We", "Us" or "Our" in this policy) refers to ***TITLE***.</li>
 	<li>You refers to the individual accessing the Website, Service, Company, or other legal entity.</li>
@@ -60,7 +60,7 @@
 
 <details>
     <summary>Contact Us</summary>
-	<p>If you have any questions about this Disclaimer, contact us by email at <a href="info@***URL***">info@***URL***</a></p>
+	<p>If you have any questions about this Disclaimer, contact us by email at <a href='info@***URL***'>info@***URL***</a></p>
 </details>
 
 <p>Last updated: June 22, 2020</p>

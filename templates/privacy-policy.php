@@ -17,7 +17,7 @@
 	<li>Company (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to ***TITLE***.</li>
 	<li>Affiliate means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</li>
 	<li>Account means a unique account created for You to access our Service or parts of our Service.</li>
-	<li>Website refers to ***TITLE***, accessible from <a href="https://***URL***">***URL***</a>.</li>
+	<li>Website refers to ***TITLE***, accessible from <a href='https://***URL***'>***URL***</a>.</li>
 	<li>Service refers to the Website.</li>
 	<li>Country refers to the United States</li>
 	<li>Service Provider means any natural or legal person who processes the data on behalf of the Company. It refers to third-party companies or individuals employed by the Company to facilitate the Service, to provide the Service on behalf of the Company, to perform services related to the Service or to assist the Company in analyzing how the Service is used.</li>
@@ -46,31 +46,31 @@
 	<p>We use both session and persistent Cookies for the purposes set out below:</p>
 	<ul>
 		<li>
-			<p><span class="bold">Necessary / Essential Cookies</span>
+			<h4>Necessary / Essential Cookies</h4>
 			<p>Type: Session Cookies</p>
 			<p>Administered by: Us</p>
 			<p>Purpose: These Cookies are essential to provide You with services available through the Website and to enable You to use some of its features. They help to authenticate users and prevent fraudulent use of user accounts. Without these Cookies, the services that You have asked for cannot be provided, and We only use these Cookies to provide You with those services.</p>
 		</li>
 		<li>
-			<p><span class="bold">Cookies Policy / Notice Acceptance Cookies</span></p>
+			<h4>Cookies Policy / Notice Acceptance Cookies</h4>
 			<p>Type: Persistent Cookies</p>
 			<p>Administered by: Us</p>
 			<p>Purpose: These Cookies identify if users have accepted the use of cookies on the Website.</p>
 		</li>
 		<li>
-			<p><span class="bold">Functionality Cookies</span></p>
+			<h4>Functionality Cookies</h4>
 			<p>Type: Persistent Cookies</p>
 			<p>Administered by: Us</p>
 			<p>Purpose: These Cookies allow us to remember choices You make when You use the Website, such as remembering your login details or language preference. The purpose of these Cookies is to provide You with a more personal experience and to avoid You having to re-enter your preferences every time You use the Website.</p>
 		</li>
 		<li>
-			<p><span class="bold">Tracking and Performance Cookies</span></p>
+			<h4>Tracking and Performance Cookies</h4>
 			<p>Type: Persistent Cookies</p>
 			<p>Administered by: Third-Parties</p>
 			<p>Purpose: These Cookies are used to track information about traffic to the Website and how users use the Website. The information gathered via these Cookies may directly or indirectly identify you as an individual visitor. This is because the information collected is typically linked to a pseudonymous identifier associated with the device you use to access the Website. We may also use these Cookies to test new advertisements, pages, features or new functionality of the Website to see how our users react to them.</p>
 		</li>
 		<li>
-			<p><span class="bold">Targeting and Advertising Cookies</span></p>
+			<h4>Targeting and Advertising Cookies</h4>
 			<p>Type: Persistent Cookies</p>
 			<p>Administered by: Third-Parties</p>
 			<p>Purpose: These Cookies track your browsing habits to enable Us to show advertising which is more likely to be of interest to You. These Cookies use information about your browsing history to group You with other users who have similar interests. Based on that information, and with Our permission, third party advertisers can place Cookies to enable them to show adverts which We think will be relevant to your interests while You are on third party websites.</p>
@@ -132,8 +132,8 @@
 
 	<p>Service Providers have access to Your Personal Data only to perform their tasks on Our behalf and are obligated not to disclose or use it for any other purpose.</p>
 	<ul>
-		<li><span class="bold">Google Analytics</span>: We may use third-party Service providers to monitor and analyze the use of our Service. For more information on what type of information Google Analytics collects, please visit Google's Privacy Policy page: <a href="https://policies.google.com/privacy" target="_blank" ref="noopener">policies.google.com/privacy</a></li>
-		<li><span class="bold">Google Ads (AdSense)</span>: We may use Service providers to show advertisements to You to help support and maintain Our Service. You can opt-out from Google Adsense service by following the instructions as described on Google's Privacy Policy page: <a href="https://policies.google.com/privacy" target="_blank" ref="noopener">policies.google.com/privacy</a>.</li>
+		<li><b>Google Analytics</b>: We may use third-party Service providers to monitor and analyze the use of our Service. For more information on what type of information Google Analytics collects, please visit Google's Privacy Policy page: <a href='https://policies.google.com/privacy'>policies.google.com/privacy</a></li>
+		<li><b>Google Ads (AdSense)</b>: We may use Service providers to show advertisements to You to help support and maintain Our Service. You can opt-out from Google Adsense service by following the instructions as described on Google's Privacy Policy page: <a href='https://policies.google.com/privacy'>policies.google.com/privacy</a>.</li>
 	</ul>
 </details>
 
@@ -158,7 +158,7 @@
 
 <details>
     <summary>Contact Us</summary>
-	<p>If you have any questions about this Privacy Policy, contact us by email at <a href="info@***URL***">info@***URL***</a></p>
+	<p>If you have any questions about this Privacy Policy, contact us by email at <a href='info@***URL***'>info@***URL***</a></p>
 </details>
 
 <p>Last updated: June 22, 2020</p>

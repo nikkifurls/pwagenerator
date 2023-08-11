@@ -1,0 +1,25 @@
+{
+  "name": "pwagenerator",
+  "version": "2.0.0",
+  "description": "PWA Generator is a static site generator that builds and deploys Progressive Web Apps to Netlify",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikkifurls/pwagenerator.git"
+  },
+  "keywords": [
+    "pwa",
+    "progressive web app"
+  ],
+  "author": {
+    "name": "Nicole Furlan",
+    "email": "info@nicolefurlan.com"
+  },
+  "bugs": {
+    "url": "https://github.com/nikkifurls/pwagenerator/issues"
+  },
+  "homepage": "https://github.com/nikkifurls/pwagenerator#readme",
+  "dependencies": {
+    "cli-real-favicon": "^0.0.8",
+    "netlify-cli": "^16.0.1"
+  }
+}

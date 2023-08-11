@@ -13,7 +13,7 @@
 	<li>Service refers to the Website.</li>
 	<li>Terms and Conditions (also referred as "Terms") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service.</li>
 	<li>Third-party Social Media Service means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.</li>
-	<li>Website refers to ***TITLE***, accessible from <a href="https://***URL***">***URL***</a>.</li>
+	<li>Website refers to ***TITLE***, accessible from <a href='https://***URL***'>***URL***</a>.</li>
 	<li>You means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</li>
 </ul>
 
@@ -93,7 +93,7 @@
 
 <details>
     <summary>Contact Us</summary>
-	<p>If you have any questions about these Terms and Conditions, contact us by email at <a href="info@***URL***">info@***URL***</a></p>
+	<p>If you have any questions about these Terms and Conditions, contact us by email at <a href='info@***URL***'>info@***URL***</a></p>
 </details>
 
 <p>Last updated: June 22, 2020</p>

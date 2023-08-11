@@ -1,17 +1,14 @@
 [
 	{
-		"url": "",
-		"title": "",
-		"description": "",
-		"keywords": "",
-		"categories": [
-			"",
-			""
-		],
-		"netlify_id": "",
-		"gtm_id": "",
-		"fbpixel_id": "",
-		"repixel_id": "",
+		"url": "exampleproject.com",
+		"title": "Example Project",
+		"description": "This is an example project",
+		"keywords": "example, project",
+		"categories": [ "example", "project" ],
+		"netlify_id": "xxx",
+		"gtm_id": "G-XXXXXXXXXX",
+		"fbpixel_id": "xxx",
+		"repixel_id": "xxx",
 		"google_ads": false,
 		"amazon_ads": false,
 		"other_ads": false,
@@ -24,51 +21,128 @@
 			"google_api_callback": null
 		},
 		"fonts": {
-			"heading": null,
-			"body": null
+			"heading": "Roboto Slab",
+			"body": "Roboto"
+		},
+		"colors": {
+			"main": {
+				"normal": "92D7DA",
+				"dark": "489094"
+			},
+			"accent": {
+				"normal": "FA96C0",
+				"dark": "B34F78"
+			}
 		},
 		"fontawesome": true,
 		"android_app_id": {
-			"free": null,
-			"paid": null
+			"free": "com.exampleproject.twa",
+			"paid": "com.exampleproject_paid.twa"
 		},
 		"apple_app_id": {
 			"free": null,
 			"paid": null
 		},
 		"screenshots": [
-			"",
-			"",
-			""
+			"img/screenshot1.png",
+			"img/screenshot2.png",
+			"img/screenshot3.png"
 		],
-		"shortcuts": [],
+		"shortcuts": [
+			{
+				"name": "Example Shortcut",
+				"description": "Example shortcut description",
+				"url": "./shortcut",
+				"icons": [
+					{
+						"src": "img/shortcut.png",
+						"sizes": "512x512"
+					}
+				]
+			}
+		],
 		"links": [],
-		"nav": [],
+		"nav": {
+			"image": "img/logo_nav.svg",
+			"items": [
+				{
+					"url": "nav-item-1",
+					"title": "Nav Item 1"
+				},
+				{
+					"url": "nav-item-2",
+					"title": "Nav Item 2"
+				}
+			]
+		},
 		"header": {
-			"title": null,
-			"description": null,
-			"image": null,
-			"image_credit": null
+			"title": "Example header title",
+			"description": "Example header description",
+			"image": "img/logo_header.svg",
+			"image_credit": "Example header image credit"
 		},
 		"social": {
-			"mailto": null,
+			"mailto": "hi@exampleproject.com",
 			"facebook": null,
-			"twitter": null,
-			"github": null,
+			"twitter": "exampleproject",
+			"github": "nikkifurls/exampleproject",
 			"patreon": null,
-			"paypal": null,
-			"portfolio": null,
+			"paypal": "donate?hosted_button_id=M7MMF3EWQTLKG",
+			"portfolio": "nicolefurlan.com",
 			"yelp": null,
 			"tripadvisor": null,
-			"custom": []
+			"custom": [
+				{
+					"url": "https://nicolefurlan.com",
+					"label": "Nicole Furlan",
+					"text": null,
+					"link": "<i class='fas fa-cat'></i>"
+				}
+			]
 		},
 		"author": {
-			"name": "",
-			"twitter": ""
+			"name": "Nicole Furlan",
+			"twitter": "nicolemfurlan"
 		},
-		"redirects": [],
-		"pages": {},
-		"images": [],
-		"modules": []
+		"redirects": [
+			{
+				"from": "/donate",
+				"to": "https://www.paypal.com/donate?hosted_button_id=M7MMF3EWQTLKG"
+			},
+			{
+				"from": "/redirect",
+				"to": "/example 301!"
+			},
+			{
+				"from": "/redirect.html",
+				"to": "/example 301!"
+			},
+			{
+				"from": "/* example=:example",
+				"to": "/:example 301!"
+			}
+		],
+		"pages": {
+			"*": {
+				"url": "",
+				"title": "",
+				"description": "This is an example page template ***TITLE***",
+				"keywords": "example ***TITLE***, project ***TITLE***, template ***TITLE***"
+			},
+			"example": {
+				"url": "example",
+				"title": "Example page",
+				"description": "This is an example page",
+				"keywords": "example, project, template"
+			}
+		},
+		"cache_files": [
+			"img/logo_header.svg",
+			"img/logo_nav.svg",
+			"img/shortcut.png"
+		],
+		"opt_files": [
+			"opt/google_auth.js"
+		]
 	}
 ]

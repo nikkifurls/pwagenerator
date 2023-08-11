@@ -1,0 +1,35 @@
+@use 'colors';
+
+/*
+** Layout
+*/
+
+$media-tablet: 30em;
+$media-desktop: 48em;
+$media-desktop-large: 75em;
+
+:root {
+	--space-xxsmall: .1em;
+	--space-xsmall: .25em;
+	--space-small: .5em;
+	--space-medium: .75em;
+	--space-large: 1em;
+	--space-xlarge: 1.25em;
+	--space-xxlarge: 1.5em;
+	--space-super: 2em;
+	--space-xsuper: 3em;
+	--space-xxsuper: 4em;
+	--space-border: 4px;
+}
+
+@mixin padding-default($padding-top-bottom: 0) {
+	padding: $padding-top-bottom var(--space-large);
+
+	@media (min-width: $media-desktop) {
+		padding: $padding-top-bottom var(--space-xlarge);
+	}
+
+	@media (min-width: $media-desktop-large) {
+		padding: $padding-top-bottom var(--space-xxlarge);
+	}
+}

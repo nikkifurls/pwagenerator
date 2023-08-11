@@ -1,0 +1,30 @@
+@use 'colors';
+
+/*
+** Animations
+*/
+@keyframes pulse {
+	0% {
+		color: var(--color-gray-med);
+	}
+
+	17% {
+		color: var(--color-main);
+	}
+
+	35% {
+		color: var(--color-main-dark);
+	}
+
+	52% {
+		color: var(--color-accent-dark);
+	}
+
+	68% {
+		color: var(--color-accent);
+	}
+
+	86% {
+		color: var(--color-gray-med);
+	}
+}

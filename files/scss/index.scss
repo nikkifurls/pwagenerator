@@ -1,127 +1,15 @@
-/**** Table of Contents
-****
-***
-** Variables
-**	Images
-**	Colors
-**	Fonts
-**	Formatting
-** Typography
-** Layout
-** Links / Buttons / Forms
-** Media
-** Notifications
-** Misc
-*/
-
-/****
-**** Variables
-***
-*/
-
-/**
-** Images
-*/
-$header-image: "none" !default;
-
-/**
-** Main colors
-*/
-$color-main: #0FF !default; /* cyan */
-$color-main-dark: #008B8B !default; /* darkcyan */
-
-/**
-** Accent colors
-*/
-$color-accent: #FFA07A !default; /* lightsalmon */
-$color-accent-dark: #FF6347 !default; /* tomato */
-
-/**
-** Commonly used colors
-*/
-$color-black: #000;
-$color-gray-light: #A0A0A0;
-$color-gray-med: #464646;
-$color-gray-dark: #151515;
-$color-white: #FFF;
-
-/**
-** Brand colors
-*/
-$color-facebook: #3B5998;
-$color-twitter: #1DA1F2;
-$color-patreon: #F96854;
-$color-paypal: #0E55AA;
-$color-android: #839E2E;
-$color-apple: #8A98A0;
-
-/**
-** Fonts
-*/
-$font-heading: "Roboto Slab" !default;
-$font-heading-stack: $font-heading, Georgia, serif;
-$font-body: "Roboto" !default;
-$font-body-stack: $font-body, helvetica, arial, sans-serif;
-
-$font-small: .8rem;
-$font-medium: 1rem;
-$font-large: 1.25rem;
-$font-xlarge: 1.5rem;
-$font-xxlarge: 2rem;
-$font-super: 2.5rem;
-$font-xsuper: 3rem;
-$font-xxsuper: 3.5rem;
-
-$font-normal: 400;
-$font-bold: 700;
-
-/**
-** Formatting
-*/
-$space-xxsmall: .1em;
-$space-xsmall: .25em;
-$space-small: .5em;
-$space-medium: .75em;
-$space-large: 1em;
-$space-xlarge: 1.25em;
-$space-xxlarge: 1.5em;
-$space-super: 2em;
-$space-xsuper: 3em;
-$space-xxsuper: 4em;
-
-$space-border: 4px;
+@use 'animations';
+@use 'colors';
+@use 'fonts';
+@use 'images';
+@use 'layout';
 
 $media-tablet: 30em;
 $media-desktop: 48em;
 $media-desktop-large: 75em;
 
-@mixin padding-default($padding-top-bottom: 0) {
-	padding: $padding-top-bottom $space-large;
-
-	@media (min-width: $media-desktop) {
-		padding: $padding-top-bottom $space-xlarge;
-	}
-
-	@media (min-width: $media-desktop-large) {
-		padding: $padding-top-bottom $space-xxlarge;
-	}
-}
-
-@mixin font-size($font-size: 1em) {
-	font-size: $font-size;
-
-	@media (min-width: $media-desktop) {
-		font-size: $font-size * 1.25;
-	}
-
-	@media (min-width: $media-desktop-large) {
-		font-size: $font-size * 1.5;
-	}
-}
-
-/****
-**** Typography
-***
+/*
+** Typography
 */
 html,
 *,
@@ -142,14 +30,14 @@ body {
 
 body,
 .description {
-	font-family: $font-body-stack;
+	font-family: var(--font-body-stack);
 }
 
 body {
-	@include font-size($font-medium);
-	background-color: $color-gray-dark;
-	color: $color-white;
-	font-weight: $font-normal;
+	@include fonts.font-size(var(--font-medium));
+	background-color: var(--color-gray-dark);
+	color: var(--color-white);
+	font-weight: var(--font-normal);
 	line-height: 1.4;
 }
 
@@ -159,7 +47,7 @@ h2,
 h3,
 h4,
 .title {
-	font-family: $font-heading-stack;
+	font-family: var(--font-heading-stack);
 	
 }
 
@@ -180,7 +68,7 @@ h2,
 h3,
 h4,
 .title {
-	color: $color-accent;
+	color: var(--color-accent);
 }
 
 header,
@@ -197,7 +85,7 @@ input[type="button"],
 input[type="submit"],
 summary,
 dt {
-	font-weight: $font-bold;
+	font-weight: var(--font-bold);
 }
 
 blockquote,
@@ -219,7 +107,7 @@ h3,
 h4,
 p,
 dd {
-	margin: $space-xsmall auto;
+	margin: var(--space-small) auto;
 }
 
 dl,
@@ -228,26 +116,26 @@ ul {
 	dt,
 	dd,
 	li {
-		margin: $space-small auto;
+		margin: var(--space-small) auto;
 	}
 }
 
 h1,
 .title {
-	@include font-size($font-xsuper);
+	@include fonts.font-size(var(--font-xsuper));
 }
 
 h2 {
-	@include font-size($font-super);
+	@include fonts.font-size(var(--font-super));
 }
 
 h3,
 .description {
-	@include font-size($font-xlarge);
+	@include fonts.font-size(var(--font-xlarge));
 }
 
 h4 {
-	@include font-size($font-large);
+	@include fonts.font-size(var(--font-large));
 }
 
 .social,
@@ -257,7 +145,7 @@ input[type="button"],
 input[type="submit"],
 textarea,
 select {
-	font-size: $font-large;
+	font-size: var(--font-large);
 }
 
 code,
@@ -269,7 +157,7 @@ pre,
 }
 
 .bold {
-	font-weight: $font-bold;
+	font-weight: var(--font-bold);
 }
 
 .italic {
@@ -305,12 +193,11 @@ span[class*="icon"] {
 }
 
 .icon-heart {
-	color: $color-accent;
+	color: var(--color-accent);
 }
 
-/****
-**** Layout
-***
+/*
+** Layout
 */
 article,
 aside,
@@ -325,19 +212,19 @@ section {
 	align-self: normal;
 	display: flex;
 	flex-wrap: nowrap;
-	gap: 0 $space-xsmall;
+	gap: 0 var(--space-xsmall);
 	justify-content: space-between;
 	list-style: none;
 	overflow-x: auto;
 	padding: inherit;
 	padding-bottom: 0;
 
-	@media (min-width: $media-desktop) {
+	@media (min-width: layout.$media-desktop) {
 		padding: 0;
 	}
 
 	a {
-		margin: 0 $space-xsmall;
+		margin: 0 var(--space-xsmall);
 
 		&:first-of-type {
 			margin-left: 0;
@@ -353,11 +240,11 @@ section {
 	}
 
 	&::-webkit-scrollbar-thumb {
-		background: $color-accent-dark;
+		background: var(--color-accent-dark);
 	}
 
 	&::-webkit-scrollbar-track {
-		background: $color-accent;
+		background: var(--color-accent);
 	}
 }
 
@@ -365,20 +252,20 @@ section {
 	margin: 0 auto;
 	width: min(700px, 100%);
 
-	@media (min-width: $media-desktop-large) {
+	@media (min-width: layout.$media-desktop-large) {
 		width: min(1000px, 100%);
 	}
 }
 
 .container-text {
 	margin: 0 auto;
-	padding: $space-super;
+	padding: var(--space-super);
 	width: min(55ch, 100%);
 }
 
 .container-nav {
-	background-color: rgba($color-black, .85);
-	@include padding-default(0);
+	background-color: rgba(0, 0, 0, .85);
+	@include layout.padding-default(0);
 
 	&:first-of-type {
 		top: 0;
@@ -388,7 +275,7 @@ section {
 
 	&:last-of-type {
 		.nav {
-			@media (max-width: $media-tablet) {
+			@media (max-width: layout.$media-tablet) {
 				display: none;
 			}
 		}
@@ -400,25 +287,29 @@ section {
 		justify-content: center;
 		align-items: center;
 
-		@media (min-width: $media-desktop) {
+		@media (min-width: layout.$media-desktop) {
 			display: grid;
 			grid-template-columns: minmax(250px, 25%) 1fr;
 			align-items: center;
 		}
 
+		&:has(.nav) {
+			grid-template-columns: minmax(250px, 25%) 1fr 1fr;
+		}
+
 		a {
-			padding: $space-xsmall;
+			padding: var(--space-xsmall);
 		}
 
 		.logo {
-			margin: $space-xsmall auto;
-			padding: $space-small $space-xsmall 0;
+			margin: var(--space-xsmall) auto;
+			padding: var(--space-small) var(--space-xsmall) 0;
 
 			img {
 				width: 250px;
 			}
 
-			@media (min-width: $media-desktop) {
+			@media (min-width: layout.$media-desktop) {
 				margin: 0 auto;
 				padding: 0;
 
@@ -428,10 +319,24 @@ section {
 			}
 		}
 
+		.nav {
+			align-items: center;
+			display: flex;
+			gap: 10px;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			li {
+				margin: 0;
+			}
+		}
+
 		.social {
 			@extend .container-scrollable;
+			justify-content: center;
 			
-			@media (min-width: $media-desktop) {
+			@media (min-width: layout.$media-desktop) {
 				align-items: center;
 				justify-content: flex-end;
 				margin: 0;
@@ -439,7 +344,7 @@ section {
 
 			a {
 				&:first-of-type {
-					@media (max-width: $media-desktop) {
+					@media (max-width: layout.$media-desktop) {
 						margin-left: 0;
 					}
 				}
@@ -453,7 +358,7 @@ section {
 }
 
 header {
-	background: $color-black no-repeat center/cover;
+	background: var(--color-black) no-repeat center/cover;
 	display: flex;
 	flex-direction: column;
 	min-height: 25vh;
@@ -466,10 +371,10 @@ header {
 	&.image-logo {
 		align-items: center;
 		justify-content: flex-end;
-		@include padding-default($space-large);
+		@include layout.padding-default(var(--space-large));
 
 		.logo + .text {
-			margin-top: $space-large;
+			margin-top: var(--space-large);
 		}
 		
 		.logo {
@@ -477,7 +382,7 @@ header {
 				max-height: 32vh;
 				width: 100%;
 	
-				@media (min-width: $media-desktop-large) {
+				@media (min-width: layout.$media-desktop-large) {
 					max-height: 30vh;
 				}
 			}
@@ -496,29 +401,29 @@ header {
 	&.image-background {
 		align-items: flex-start;
 		justify-content: center;
-		@include padding-default($space-xxsuper);
+		@include layout.padding-default(var(--space-xxsuper));
 
 		.text {
-			@media (min-width: $media-tablet) {
+			@media (min-width: layout.$media-tablet) {
 				max-width: 65%;
 			}
 
-			@media (min-width: $media-desktop) {
+			@media (min-width: layout.$media-desktop) {
 				max-width: 52.5%;
 			}
 
 			hgroup {
 				h1 {
-					margin: 0 auto $space-small;
+					margin: 0 auto var(--space-small);
 				}
 			
 				.description {
-					color: $color-white;
+					color: var(--color-white);
 				}
 			}
 			
 			address {
-				margin-top: $space-super;
+				margin-top: var(--space-super);
 			}
 		}
 	}
@@ -533,18 +438,18 @@ header {
 }
 
 main {
-	margin: $space-large auto;
-	@include padding-default($space-super);
+	margin: var(--space-large) auto;
+	@include layout.padding-default(var(--space-super));
 
 	section {
-		padding-bottom: $space-super;
+		padding-bottom: var(--space-super);
 
 		&:last-of-type {
 			padding-bottom: 0;
 		}
 
 		&:only-of-type {
-			padding-bottom: $space-super;
+			padding-bottom: var(--space-super);
 		}
 	}
 }
@@ -553,37 +458,37 @@ main {
 .post {
 	main {
 		.container {
-			background-color: $color-black;
-			color: $color-white;
+			background-color: var(--color-black);
+			color: var(--color-white);
 		}
 	}
 }
 
 footer {
-	@include padding-default($space-small);
+	@include layout.padding-default(var(--space-small));
 
 	.container-text,
 	.ad-disclaimer,
 	.image-credit,
 	.tech-credit,
 	.links:not(.list) {
-		font-size: $font-small;
+		font-size: var(--font-small);
 		text-align: center;
 	}
 
 	.image-credit,
 	.tech-credit {
-		margin: $space-large auto;
+		margin: var(--space-large) auto;
 	}
 
 	.container-text {
-		padding: $space-large;
+		padding: var(--space-large);
 
-		@media (min-width: $media-desktop) {
-			background-color: $color-gray-dark;
-			border: $space-border solid $color-black;
-			border-radius: $space-border;
-			padding: $space-super;
+		@media (min-width: layout.$media-desktop) {
+			background-color: var(--color-gray-dark);
+			border: var(--space-border) solid var(--color-black);
+			border-radius: var(--space-border);
+			padding: var(--space-super);
 		}
 	}
 
@@ -591,12 +496,12 @@ footer {
 		a {
 			display: block;
 			margin: 0 auto;
-			padding: $space-medium 0;
+			padding: var(--space-medium) 0;
 	
-			@media (min-width: $media-tablet) {
+			@media (min-width: layout.$media-tablet) {
 				display: inline-block;
-				margin: $space-xsmall;
-				padding: $space-large;
+				margin: var(--space-xsmall);
+				padding: var(--space-large);
 
 				&:first-of-type {
 					margin-left: 0;
@@ -616,28 +521,27 @@ details {
 	display: block;
 
 	summary {
-		margin: $space-medium auto;
+		margin: var(--space-small) auto;
 	}
 }
 
-/****
-**** Links / Buttons / Forms
-***
+/*
+** Links / Buttons / Forms
 */
 .buttons,
 label {
-	margin: $space-small auto;
+	margin: var(--space-small) auto;
 }
 
 a {
-	color: $color-main;
+	color: var(--color-main);
 	position: relative;
 	text-decoration: none;
 
 	&:hover,
 	&:active,
 	&:focus {
-		color: $color-accent;
+		color: var(--color-accent);
 	}
 }
 
@@ -647,54 +551,54 @@ input,
 select,
 textarea {
 	border: none;
-	border-radius: $space-border;
+	border-radius: var(--space-border);
 	vertical-align: middle;
 }
 
 .facebook,
 .button.facebook,
 button.facebook {
-	background-color: $color-facebook;
+	background-color: var(--color-facebook);
 }
 
 .twitter,
 .button.twitter,
 button.twitter {
-	background-color: $color-twitter;
+	background-color: var(--color-twitter);
 }
 
 .patreon,
 .button.patreon,
 button.patreon {
-	background-color: $color-patreon;
+	background-color: var(--color-patreon);
 }
 
 .paypal,
 .button.paypal
 button.paypal {
-	background-color: $color-paypal;
+	background-color: var(--color-paypal);
 }
 
 .android:not(.install),
 .button.android
 button.android {
-	background-color: $color-android;
+	background-color: var(--color-android);
 }
 
 .apple:not(.install),
 .button.apple
 button.apple {
-	background-color: $color-apple;
+	background-color: var(--color-apple);
 }
 
 button,
 .button,
 input[type="button"],
 input[type="submit"] {
-	background-color: $color-main-dark;
-	color: $color-white;
+	background-color: var(--color-main-dark);
+	color: var(--color-white);
 	line-height: 1;
-	padding: $space-small $space-large;
+	padding: var(--space-small) var(--space-large);
 
 	&[type=color] {
 		padding: 0;
@@ -707,8 +611,8 @@ input[type="submit"] {
 	&:hover,
 	&:active,
 	&:focus {
-		background-color: $color-accent-dark;
-		color: $color-white;
+		background-color: var(--color-accent-dark);
+		color: var(--color-white);
 	}
 
 	&.disabled  {
@@ -716,8 +620,8 @@ input[type="submit"] {
 		&:active,
 		&:hover,
 		&:focus {
-			background-color: $color-gray-dark;
-			color: $color-white;
+			background-color: var(--color-gray-dark);
+			color: var(--color-white);
 			cursor: not-allowed;
 			pointer-events: none;
 		}
@@ -737,10 +641,10 @@ details summary,
 input,
 textarea,
 select {
-	background-color: $color-white;
-	color: $color-gray-dark;
+	background-color: var(--color-white);
+	color: var(--color-gray-dark);
 	font-size: inherit;
-	padding: $space-small;
+	padding: var(--space-small);
 }
 
 label {
@@ -751,9 +655,8 @@ label {
     grid-template-columns: minmax(10em, 25%) 1fr;
 }
 
-/****
-**** Media
-***
+/*
+** Media
 */
 img {
 	background: transparent;
@@ -762,26 +665,30 @@ img {
 	max-width: 100%;
 }
 
-/****
-**** Notifications
-***
+/*
+** Notifications
 */
 .notification {
-	background-color: $color-gray-med;
-	border-top: $space-border solid $color-gray-light;
+	background-color: var(--color-gray-med);
 	bottom: 0;
-	color: $color-white;
+	color: var(--color-white);
 	display: none;
 	left: 0;
-	@include padding-default($space-small);
+	@include layout.padding-default(var(--space-small));
 	position: fixed;
 	right: 0;
+	width: 100%;
 	z-index: 999;
+
+	&[open] {
+		display: block;
+	}
 
 	&.notification-share {
 		p {
 			@extend .container-scrollable;
-			padding-bottom: $space-xsmall;
+			justify-content: normal;
+			padding-bottom: var(--space-xsmall);
 
 			a {
 				display: flex;
@@ -792,7 +699,7 @@ img {
 
 	p {
 		margin: 0;
-		margin-right: $space-large;		
+		margin-right: var(--space-large);		
 	}
 
 	.container {
@@ -805,32 +712,31 @@ img {
 	}
 }
 
-/****
-**** Misc
-***
+/*
+** Misc
 */
 @keyframes pulse {
 	0% {
-		color: $color-gray-med;
+		color: var(--color-gray-med);
 	}
 
 	17% {
-		color: $color-main;
+		color: var(--color-main);
 	}
 
 	35% {
-		color: $color-main-dark;
+		color: var(--color-main-dark);
 	}
 
 	52% {
-		color: $color-accent-dark;
+		color: var(--color-accent-dark);
 	}
 
 	68% {
-		color: $color-accent;
+		color: var(--color-accent);
 	}
 
 	86% {
-		color: $color-gray-med;
+		color: var(--color-gray-med);
 	}
 }

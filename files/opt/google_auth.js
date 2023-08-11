@@ -37,7 +37,7 @@ const handleClientLoad = callback => {
 const login = () => {
 	const isLoggedIn = getLoginStatus();
 
-	if (isLoggedIn == false) {
+	if (isLoggedIn === false) {
 		return gapi.auth2.getAuthInstance()
 			.signIn({
 				scope: apiScope
@@ -58,7 +58,7 @@ const login = () => {
 const logout = () => {
 	const isLoggedIn = getLoginStatus();
 
-	if (isLoggedIn == true) {
+	if (isLoggedIn === true) {
 		if (GoogleAuth !== undefined) {
 			GoogleAuth.signOut()
 				.then(() => {
@@ -89,7 +89,7 @@ const updateLoginButtons = (isLoggedIn = null) => {
 		isLoggedIn = getLoginStatus();
 	}
 
-	if (isLoggedIn == true) {
+	if (isLoggedIn === true) {
 		loginButtons.innerHTML = `<button id="logout">Log out</button>`;
 	} else {
 		loginButtons.innerHTML = `<button id="login">Log in</button>`;
