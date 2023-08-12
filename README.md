@@ -25,7 +25,7 @@ For example:
 ./pwagenerator exampleproject.com -b
 ```
 
-To create a new project, add it to `projects.json``, then build it.
+To create a new project, add it to `projects.json`, then build it.
 
 ### Options
 - Verbose (`-v`): Provides a more verbose output for the other option selected (`-b`, `-i`, or `-d`),
