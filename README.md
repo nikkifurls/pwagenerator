@@ -458,3 +458,10 @@ These open source projects have been built using PWA Generator. Click the dropdo
 	"opt_files": []
 }
 ```
+
+## Contributions
+Contributions are welcome! If you discover an issue, or have an idea for an improvement, feel free to create an issue.
+
+## Get in Touch
+- Email: [hi@nicolefurlan.com](mailto:hi@nicolefurlan.com)
+- Twitter: [@nicolemfurlan](https://twitter.com/nicolemfurlan)
