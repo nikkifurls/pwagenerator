@@ -215,7 +215,7 @@ These are the fonts available for using in the `fonts` object in `projects.json`
 - [Special Elite](https://fonts.google.com/specimen/Special+Elite)
 
 ## Example Projects
-These open source projects have been built using PWA Generator. Click the dropdown under each to see the corresponding project configuration for `projects.json`.
+The following open source projects have been built using PWA Generator. Check out the website, the GitHub repo, and the project configuration for `projects.json` below.
 
 ### [nicolefurlan.com](https://nicolefurlan.com) / [https://github.com/nikkifurls/nicolefurlan.com](https://github.com/nikkifurls/nicolefurlan.com)
 ```
