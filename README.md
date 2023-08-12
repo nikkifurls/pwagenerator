@@ -1,31 +1,29 @@
-- [Progressive Web App (PWA) Generator](#progressive-web-app-pwa-generator)
-  - [About](#about)
-  - [Usage](#usage)
+# PWA Generator
+
+- [About](#about)
+- [Usage](#usage)
     - [Options](#options)
-  - [File Structure](#file-structure)
+- [File Structure](#file-structure)
     - [`files` Directory](#files-directory)
     - [`inc` Directory](#inc-directory)
     - [`templates` and `template-parts` Directories](#templates-and-template-parts-directories)
-  - [Project File Structure](#project-file-structure)
+- [Project File Structure](#project-file-structure)
     - [`fonts` Directory](#fonts-directory)
     - [`img` Directory](#img-directory)
     - [`js` Directory](#js-directory)
     - [`scss` Directory](#scss-directory)
-  - [Build Process](#build-process)
-  - [Fonts](#fonts)
+- [Build Process](#build-process)
+- [Fonts](#fonts)
     - [Serif](#serif)
     - [Sans serif](#sans-serif)
     - [Misc](#misc)
-  - [Example Projects](#example-projects)
+- [Example Projects](#example-projects)
     - [nicolefurlan.com / https://github.com/nikkifurls/nicolefurlan.com](#nicolefurlancom--httpsgithubcomnikkifurlsnicolefurlancom)
     - [dogsafefoods.com / https://github.com/nikkifurls/nicolefurlan.com](#dogsafefoodscom--httpsgithubcomnikkifurlsnicolefurlancom)
-  - [Contributions](#contributions)
-  - [Get in Touch](#get-in-touch)
-# Progressive Web App (PWA) Generator
-PWA Generator is a static site generator that builds and deploys Progressive Web Apps to [Netlify](https://netlify.com).
-
+- [Contributions](#contributions)
+- [Get in Touch](#get-in-touch)
 ## About
-PWA Generator builds static websites based on the project configuration specified in `projects.json`. It can generate everything needed for a website to functions a a progressive web app, e.g. it functions offline and it is installable. It can also deploy it to [Netlify](https://netlify.com).
+PWA Generator is a static site generator that builds static websites based on the project configuration specified in `projects.json`. It can generate everything needed for a website to functions a a progressive web app, e.g. it functions offline and it is installable. It can also deploy it to [Netlify](https://netlify.com).
 
 ## Usage
 List all projects configured for building in `projects.json`
