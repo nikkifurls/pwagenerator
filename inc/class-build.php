@@ -35,7 +35,6 @@ class Build {
 	private array $copy_files = [
 		'_redirects',
 		'manifest.json',
-		'package.json',
 		'robots.txt',
 		'sitemap.xml',
 		'sw.js',
@@ -626,6 +625,9 @@ class Build {
 			file_put_contents($service_worker_file, $data);
 		}
 
+		// Set project version in package.json.
+		exec("npm pkg set version={$project_version} --prefix={$this->project_dir}");
+
 		$this->project_data['version'] = $project_version;
 	}
 	
@@ -680,6 +682,18 @@ class Build {
 		}
 
 		echo "\nPopulating new project directory {$this->project_dir}";
+
+		// Create package.json.
+		chdir($this->project_dir);
+		exec("npm init -y");
+		exec("npm pkg set name='{$this->project_data['url']}'");
+		exec("npm pkg set description='{$this->project_data['description']}'");
+		exec("npm pkg set version='1'");
+		exec("npm pkg delete main");
+		exec("npm pkg delete scripts.test");
+		exec("npm pkg set scripts.build='webpack --mode production'");
+		exec("npm install --save-dev webpack-cli ts-loader sass css-loader sass-loader style-loader");
+		chdir(dirname(__DIR__));
 
 		// Create scss directory.
 		$scss_dir = "{$this->project_dir}/scss/";
@@ -827,7 +841,6 @@ class Build {
 
 			// Create new bundle.
 			echo CLI::$verbose ? "\nCompiling bundle" : "";
-			exec("npm install --prefix={$this->project_dir} webpack-cli ts-loader sass css-loader sass-loader style-loader");
 			exec("npm run build --prefix={$this->project_dir}");
 
 			// Set bundle file name for use in <head>.
@@ -961,7 +974,6 @@ class Build {
 			array_merge(
 				array_column($this->project_data['files']['compile'], 'target_file'),
 				$this->project_data['files']['copy'],
-				['package-lock.json'],
 			),
 		);
 

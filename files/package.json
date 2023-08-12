@@ -1,9 +1,0 @@
-{
-	"name": "***URL***",
-	"version": "***VERSION***",
-	"description": "***DESCRIPTION***",
-	"scripts": {
-		"build": "webpack --mode production"
-	  }
-  }
-  
