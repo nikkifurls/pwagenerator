@@ -162,6 +162,7 @@ This directory also contains a `style.scss` file, which will be generated on the
 		- Font files for the heading font, body font, and Fontawesome are added to `$this->project_data['files']['cache']`
 3. Adds pages `$this->project_data['sitemap']['urls']` for generating the `sitemap.xml` file later on.
 4. Creates and populates the project directory if it doesn't already exist:
+	- `package.json` file
 	- `index.php` file
 	- `scss` directory and `scss/style.scss` with a `:root {}` declaration containing the fonts and colors from the `fonts` and `colors` objects in `projects.json`, e.g.
 	```
