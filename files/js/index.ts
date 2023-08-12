@@ -11,22 +11,12 @@ window.addEventListener('load', () => {
 
 	// If URL parameters are passed in, check for notification.
 	if (window.location.search) {
-		const param = window.location.search.substring(1);
-		if (param) {
-			const paramParts = param.split('=');
+		const query = window.location.search.replace('?', '').split('=');
+		if (query.length > 1) {
+			const [ param, value ] = query;
 
-			// If ?notification=text is set in URL, open notification.
-			if (
-					(typeof paramParts !== 'undefined') && 
-					(paramParts !== null) && 
-					(typeof paramParts[0] !== 'undefined') && 
-					(paramParts[0] !== null) &&
-					(paramParts[0] === 'notification') &&
-					(typeof paramParts[1] !== 'undefined') && 
-					(paramParts[1] !== null)
-				) {
-					// @todo: add functionality to show cookie notification after notification passed in via URL.
-					showNotification(paramParts[1]);
+			if ('notification' === param && value) {
+				showNotification(value);
 			}
 		}
 	}
