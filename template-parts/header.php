@@ -1,3 +1,11 @@
+<?php
+
+if (empty($project_data) || empty($page)) {
+	return;
+}
+
+?>
+
 <header <?php echo 'class="image-' . $project_data['pages'][$page]['image_type'] . '"'; echo ($project_data['pages'][$page]['image_type'] === 'background') ? 'style="background-image:url(' . $project_data['pages'][$page]['image'] . ')"' : '' ?>>
 	<div class='container'>
 		<?php if ($project_data['pages'][$page]['image_type'] === 'logo'): ?>
@@ -23,11 +31,11 @@
 				</hgroup>
 			<?php endif; ?>
 			<?php if ($project_data['pages'][$page]['type'] === 'post'): ?>
-				<?php if (!empty($project_data['pages'][$page]['author']) && !empty($project_data['pages'][$page]['author']['name']) && $project_data['pages'][$page]['author']['name']): ?>
+				<?php if (!empty($project_data['pages'][$page]['author']['name'])): ?>
 					<address class='author'><?php echo $project_data['pages'][$page]['author']['name'] ?></address>
 				<?php endif; ?>
-				<?php if (!empty($project_data['pages'][$page]['date']) && $project_data['pages'][$page]['date']) { ?>
-					<?php if (!empty($project_data['pages'][$page]['date_full']) && $project_data['pages'][$page]['date_full']): ?>
+				<?php if (!empty($project_data['pages'][$page]['date'])) { ?>
+					<?php if (!empty($project_data['pages'][$page]['date_full'])): ?>
 						<time pubdate datetime='<?php echo $project_data['pages'][$page]['date'] ?>' title='<?php echo $project_data['pages'][$page]['date_full'] ?>'><?php echo $project_data['pages'][$page]['date_full'] ?></time>
 					<?php else: ?>
 						<time pubdate datetime='<?php echo $project_data['pages'][$page]['date'] ?>' title='<?php echo $project_data['pages'][$page]['date'] ?>'><?php echo $project_data['pages'][$page]['date'] ?></time>

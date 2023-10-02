@@ -13,12 +13,12 @@
 		"amazon_ads": false,
 		"other_ads": false,
 		"google_api": {
-			"google_api_client_id": null,
-			"google_api_client_key": null,
-			"google_api_key": null,
-			"google_api_scope": null,
-			"google_api_url": null,
-			"google_api_callback": null
+			"google_api_client_id": "",
+			"google_api_client_key": "",
+			"google_api_key": "",
+			"google_api_scope": "",
+			"google_api_url": "",
+			"google_api_callback": ""
 		},
 		"fonts": {
 			"heading": "Roboto Slab",
@@ -40,8 +40,8 @@
 			"paid": "com.exampleproject_paid.twa"
 		},
 		"apple_app_id": {
-			"free": null,
-			"paid": null
+			"free": "",
+			"paid": ""
 		},
 		"screenshots": [
 			"img/screenshot1.png",
@@ -83,19 +83,19 @@
 		},
 		"social": {
 			"mailto": "hi@exampleproject.com",
-			"facebook": null,
+			"facebook": "",
 			"twitter": "exampleproject",
 			"github": "nikkifurls/exampleproject",
-			"patreon": null,
+			"patreon": "",
 			"paypal": "donate?hosted_button_id=M7MMF3EWQTLKG",
 			"portfolio": "nicolefurlan.com",
-			"yelp": null,
-			"tripadvisor": null,
+			"yelp": "",
+			"tripadvisor": "",
 			"custom": [
 				{
 					"url": "https://nicolefurlan.com",
 					"label": "Nicole Furlan",
-					"text": null,
+					"text": "",
 					"link": "<i class='fas fa-cat'></i>"
 				}
 			]

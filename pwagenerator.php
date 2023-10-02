@@ -51,7 +51,7 @@ if (in_array('-v', $argv, true)) {
 	$cli->set_verbose(true);
 }
 
-$project = null;
+$project = '';
 $generate_favicons = false;
 $build = false;
 $deploy = false;
@@ -72,9 +72,11 @@ if (in_array('-d', $argv, true)) {
 	$deploy = true;
 }
 
-$build = new Build([
-	'project' => $project,
-	'generate_favicons' => $generate_favicons,
-	'build' => $build,
-	'deploy' => $deploy,
-]);
+$build = new Build(
+	$project,
+	[
+		'generate_favicons' => $generate_favicons,
+		'build' => $build,
+		'deploy' => $deploy,
+	]
+);

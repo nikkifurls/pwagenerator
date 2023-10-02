@@ -2,15 +2,14 @@
 
 require_once('inc/class-build.php');
 
-if (empty($argv[1]) || empty($argv[2]) || empty($argv[3])) {
+if (empty($argv[1]) || empty($argv[2])) {
 	exit;
 }
 
-$project = $argv[1];
-$page = $argv[2];
-$project_data = json_decode($argv[3], true);
+$page = $argv[1];
+$project_data = json_decode($argv[2], true);
 
-if (empty($project) || empty($page) || empty($project_data)) {
+if (empty($project_data) || !is_array($project_data)) {
 	exit;
 }
 

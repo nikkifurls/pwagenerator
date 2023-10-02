@@ -1,3 +1,11 @@
+<?php
+
+if (empty($project_data)) {
+	return;
+}
+
+?>
+
 <div class='container-nav'>
 	<div class='container'>
 		<nav>
@@ -6,7 +14,7 @@
 					<img alt='logo' src='<?php echo $project_data['nav']['image']; ?>' height='22' width='250'>
 				</a>
 			<?php endif; ?>
-			<?php if (!empty($project_data['nav']['items']) && is_array($project_data['nav']['items']) && count($project_data['nav']['items'])) { ?>
+			<?php if (!empty($project_data['nav']['items']) && is_array($project_data['nav']['items'])) { ?>
 				<ul class='nav'>
 					<?php foreach ($project_data['nav']['items'] as $index => $nav_page_data) { ?>
 						<li>

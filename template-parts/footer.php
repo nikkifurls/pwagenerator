@@ -1,3 +1,11 @@
+<?php
+
+if (empty($project_data) || empty($page)) {
+	return;
+}
+
+?>
+
 <?php $is_portfolio = empty($project_data['social']['portfolio']) && empty($project_data['url']) && $project_data['url'] !== $project_data['social']['portfolio']; ?>
 
 <footer>

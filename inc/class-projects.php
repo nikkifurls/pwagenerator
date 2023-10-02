@@ -10,7 +10,7 @@ class Projects {
 	/**
 	 * Projects data from projects.json.
 	 * 
-	 * @var array
+	 * @var array{url: string, title: string, description: string, keywords: string, categories: array<int, string>, netlify_id: string, gtm_id: string, fbpixel_id: string, repixel_id: string, google_ads: boolean, amazon_ads: boolean, other_ads: boolean, google_api: array<string, string>, fonts: array<string, string>, colors: array<array<string, string>>, fontawesome: boolean, android_app_id: array<string, string>, apple_app_id: array<string, string>, screenshots: array<int, string>, shortcuts: array<int, array<string, string|array<int, array<string, string>>>>, links: array<int, array<string, string>>, nav: array<string, string|array<int, array<string, string>>>, header: array<string, string>, social: array<string, string|array<int, array<string, string>>>, author: array<string, string>, redirects: array<int, array<string, string>>, cache_files: array<int, string>, opt_files: array<int, string>, sitemap_urls: array<int, string>, pages: array<string, array<string, array<string, string>|string>>}[]
 	 */
 	public array $projects_data = [];
 
@@ -26,7 +26,7 @@ class Projects {
 	/**
 	 * Gets projects data from projects.json file contents.
 	 * 
-	 * @return	array	Array of projects from projects.json.
+	 * @return	array{url: string, title: string, description: string, keywords: string, categories: array<int, string>, netlify_id: string, gtm_id: string, fbpixel_id: string, repixel_id: string, google_ads: boolean, amazon_ads: boolean, other_ads: boolean, google_api: array<string, string>, fonts: array<string, string>, colors: array<array<string, string>>, fontawesome: boolean, android_app_id: array<string, string>, apple_app_id: array<string, string>, screenshots: array<int, string>, shortcuts: array<int, array<string, string|array<int, array<string, string>>>>, links: array<int, array<string, string>>, nav: array<string, string|array<int, array<string, string>>>, header: array<string, string>, social: array<string, string|array<int, array<string, string>>>, author: array<string, string>, redirects: array<int, array<string, string>>, cache_files: array<int, string>, opt_files: array<int, string>, sitemap_urls: array<int, string>, pages: array<string, array<string, array<string, string>|string>>}[]	Array of projects from projects.json.
 	 */
 	private function get_projects(): array {
 
@@ -44,6 +44,8 @@ class Projects {
 			exit;
 		}
 
-		return json_decode($projects_data_json, true);
+		$projects_data = json_decode($projects_data_json, true);
+
+		return is_array($projects_data) ? $projects_data : [];
 	}
 }

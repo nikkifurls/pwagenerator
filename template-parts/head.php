@@ -1,3 +1,11 @@
+<?php
+
+if (empty($project_data) || empty($page)) {
+	return;
+}
+
+?>
+
 <head>
 
 <meta charset='UTF-8'>
@@ -281,11 +289,11 @@ echo '</style>';
 
 	<?php
 
-	$google_api_client_id = (!empty($project_data['google_api']['google_api_client_id']) && $project_data['google_api']['google_api_client_id']) ? $project_data['google_api']['google_api_client_id'] : '';
-	$google_api_key = (!empty($project_data['google_api']['google_api_key']) && $project_data['google_api']['google_api_key']) ? $project_data['google_api']['google_api_key'] : '';
-	$google_api_scope = (!empty($project_data['google_api']['google_api_scope']) && $project_data['google_api']['google_api_scope']) ? $project_data['google_api']['google_api_scope'] : '';
-	$google_api_url = (!empty($project_data['google_api']['google_api_url']) && $project_data['google_api']['google_api_url']) ? $project_data['google_api']['google_api_url'] : '';
-	$google_api_callback = (!empty($project_data['google_api']['google_api_callback']) && $project_data['google_api']['google_api_callback']) ? $project_data['google_api']['google_api_callback'] : '';
+	$google_api_client_id = !empty($project_data['google_api']['google_api_client_id']) ? $project_data['google_api']['google_api_client_id'] : '';
+	$google_api_key = !empty($project_data['google_api']['google_api_key']) ? $project_data['google_api']['google_api_key'] : '';
+	$google_api_scope = !empty($project_data['google_api']['google_api_scope']) ? $project_data['google_api']['google_api_scope'] : '';
+	$google_api_url = !empty($project_data['google_api']['google_api_url']) ? $project_data['google_api']['google_api_url'] : '';
+	$google_api_callback = !empty($project_data['google_api']['google_api_callback']) ? $project_data['google_api']['google_api_callback'] : '';
 
 	?>
 	

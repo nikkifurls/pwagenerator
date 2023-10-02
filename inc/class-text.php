@@ -38,6 +38,10 @@ class Text {
 	 * @return	string
 	 */
 	public static function replace_accented_characters(string $text): string {
+		if (empty($text) || !is_string($text)) {
+			return $text;
+		}
+
 		return str_ireplace(
 			[
 				'à', 'á', 'â', 'ä', 'æ', 'ã', 'å', 'ā', 'À', 'Á', 'Â', 'Ä', 'Æ', 'Ã', 'Å', 'Ā', 'ç', 'ć', 'č', 'Ç', 'Ć', 'Č', 'è', 'é', 'ê', 'ë', 'ē', 'ė', 'ę', 'È', 'É', 'Ê', 'Ë', 'Ē', 'Ė', 'Ę', 'î', 'ï', 'í', 'ī', 'į', 'ì', 'Î', 'Ï', 'Í', 'Ī', 'Į', 'Ì', 'ł', 'Ł', 'ñ', 'ń', 'Ñ', 'Ń', 'ô', 'ö', 'ò', 'ó', 'œ', 'ø', 'ō', 'õ', 'Ô', 'Ö', 'Ò', 'Ó', 'Œ', 'Ø', 'Ō', 'Õ', 'ß', 'ś', 'š', 'Ś', 'Š', 'û', 'ü', 'ù', 'ú', 'ū', 'Û', 'Ü', 'Ù', 'Ú', 'Ū', 'ÿ', 'Ÿ', 'ž', 'ź', 'ż', 'Ž', 'Ź', 'Ż',
@@ -56,6 +60,10 @@ class Text {
 	 * @return	string
 	 */
 	public static function replace_spaces(string $text): string {
+		if (empty($text) || !is_string($text)) {
+			return $text;
+		}
+
 		return str_replace(' ', '-', $text);
 	}
 	
@@ -66,6 +74,10 @@ class Text {
 	 * @return	string
 	 */
 	public static function replace_dashes(string $text): string {
+		if (empty($text) || !is_string($text)) {
+			return $text;
+		}
+
 		return str_replace('-', ' ', $text);
 	}
 }

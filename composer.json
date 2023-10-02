@@ -1,0 +1,8 @@
+{
+    "require-dev": {
+        "phpstan/phpstan": "^1.10"
+    },
+	"scripts": {
+		"phpstan": "vendor/bin/phpstan analyze"
+	}
+}
