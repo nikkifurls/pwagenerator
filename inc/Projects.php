@@ -1,6 +1,6 @@
 <?php
 
-require_once('class-cli.php');
+require_once('CLI.php');
 
 /**
  * Projects class.

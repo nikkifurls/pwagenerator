@@ -1,6 +1,6 @@
 <?php
 
-require_once('inc/class-build.php');
+require_once('inc/Build.php');
 
 if (empty($argv[1]) || empty($argv[2])) {
 	exit;

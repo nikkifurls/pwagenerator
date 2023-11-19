@@ -1,8 +1,8 @@
 <?php
 
-require_once('class-cli.php');
-require_once('class-project.php');
-require_once('class-text.php');
+require_once('CLI.php');
+require_once('Project.php');
+require_once('Text.php');
 
 /**
  * Build class.

@@ -24,8 +24,8 @@
  * To create a new project, add it to projects.json, then build it.
  */
 
-require_once('inc/class-build.php');
-require_once('inc/class-cli.php');
+require_once('inc/Build.php');
+require_once('inc/CLI.php');
 
 // Only run via CLI.
 if ('cli' !== php_sapi_name()) {

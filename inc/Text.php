@@ -6,10 +6,10 @@
 class Text {
 
 	/**
-	 * Normalize a text string.
+	 * Normalize a text string. Replaces spaces with dashes or vice versa depending on the value of 'type'.
 	 * 
 	 * @param	string	$text	Text string to normalize.
-	 * @param	string	$type	Type of text to normalize. Defaults to 'text'.
+	 * @param	string	$type	Type of text to normalize. Defaults to 'text'. Other possible value is 'url'.
 	 * @return	string
 	 */
 	public static function normalize_text(string $text, string $type = 'text'): string {
