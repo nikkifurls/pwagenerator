@@ -1,11 +1,12 @@
 /**
  * Normalize a text string.
  * 
- * @param {string} text Text string to normalize.
- * @param {string} type Type of normalization to perform. Defaults to 'text'. Other possible value is 'url'.
+ * @param {Object} textString The `normalizeText` function takes an object as its parameter with the following properties:
+ * @param {string} textString.text Text string to normalize.
+ * @param {string=} textString.type Type of normalization to perform. Defaults to 'text'. Other possible value is 'url'.
  * @returns {string} Normalized text string.
  */
-const normalizeText = (text: string, type: string = 'text'): string => {
+const normalizeText = ({ text, type = 'text' } : { text: string, type?: string }): string => {
 	
 	// Remove leading and trailing slashes.
 	let decodedText = text.replace(/^\/|\/$/g, '');
