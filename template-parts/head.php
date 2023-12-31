@@ -334,7 +334,7 @@ echo '</style>';
                 let refreshing = false;
                 navigator.serviceWorker.addEventListener('controllerchange', event => {
                     if (!refreshing) {
-                        showNotification('New verison available! Refreshing...');
+                        showNotification({ text: 'New verison available! Refreshing...' });
                         setTimeout(() => {
                             window.location.reload();
                             refreshing = true;

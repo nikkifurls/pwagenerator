@@ -44,7 +44,7 @@ const login = () => {
 			})
 			.then(() => {
 					// TO DO - show different notifications depending on user
-					showNotification("Log-in successful!");
+					showNotification({ text: "Log-in successful!" });
 				},
 				error => {
 					console.error("login()", error);
@@ -62,7 +62,7 @@ const logout = () => {
 		if (GoogleAuth !== undefined) {
 			GoogleAuth.signOut()
 				.then(() => {
-					showNotification("Log-out successful!");
+					showNotification({ text: "Log-out successful!" });
 				});
 		} else {
 			console.error("logout()", "Cannot log out, GoogleAuth is null");

@@ -7,7 +7,7 @@ import '../scss/style.scss';
 window.addEventListener('load', () => {
 
 	// Display cookie notification.
-	showNotification('cookie', 'notification-cookie');
+	showNotification({ text: 'cookie', className: 'notification-cookie' });
 
 	// If URL parameters are passed in, check for notification.
 	if (window.location.search) {
@@ -16,7 +16,7 @@ window.addEventListener('load', () => {
 			const [ param, value ] = query;
 
 			if ('notification' === param && value) {
-				showNotification(value);
+				showNotification({ text: value });
 			}
 		}
 	}
