@@ -127,7 +127,7 @@ export const showPromo = ({ text, cookieName = `${window.baseUrl}-promo`, custom
 
 			element.classList.add('animate');
 			element.addEventListener('click', () => {
-				setCookie({name: `${cookieName}-icon`, value: true});
+				setCookie({ name: `${cookieName}-icon`, value: true });
 			});
 		}, 20000);
 	}
