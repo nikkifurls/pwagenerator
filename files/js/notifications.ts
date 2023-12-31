@@ -110,7 +110,7 @@ export const closeNotification = (): void => {
  * @param {string=} notification.cookieName Cookie name to provide to showNotification(), so that the promo does not display again for the user. Defaults to the website URL with '-promo' appended.
  * @param {string=} notification.customIconSelector Selector for the promo icon, if one exists. If provided, the icon will be animated and a cookie will be set on click so that it only animates once.
  */
-export const showPromo = ({text, cookieName = `${window.baseUrl}-promo`, customIconSelector = 'nav .custom'}:{text: string, cookieName?: string, customIconSelector?: string}): void => {
+export const showPromo = ({ text, cookieName = `${window.baseUrl}-promo`, customIconSelector = 'nav .custom' }: { text: string, cookieName?: string, customIconSelector?: string }): void => {
 
 	if (!text) {
 		return;
