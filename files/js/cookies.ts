@@ -16,7 +16,7 @@ export const setCookie = ({ name, value = true } : { name: string, value?: strin
  * @param {string} cookie.name Cookie name.
  * @returns {string} Cookie value.
  */
-export const getCookie = ({name}:{name: string}): string => {
+export const getCookie = ({ name }: { name: string }): string => {
 	const cookieValue = document.cookie.split('; ')
 		.map(cookie => {
 			// Extract the cookie name and value from the cookie string.
