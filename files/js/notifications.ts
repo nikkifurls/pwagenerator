@@ -134,6 +134,6 @@ export const showPromo = ({ text, cookieName = `${window.baseUrl}-promo`, custom
 
 	// Show the notification for the promo.
 	setTimeout(() => {
-		showNotification({text: text, cookieName: cookieName});
+		showNotification({ text, cookieName });
 	}, 60000);
 }
