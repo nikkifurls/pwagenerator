@@ -11,10 +11,10 @@ declare global {
 
 /**
  * Copies provided URL to clipboard if navigator.clipboard is available, otherwise displays a notification with the URL.
- *
- * @param {string} url Url to copy.
+ * @param {Object} url The `copyUrl` function requires an object with the following properties:
+ * @param {string=} url.url Url to copy.
  */
-export const copyUrl = (url: string = window.location.href): void => {
+export const copyUrl = ({ url = window.location.href } : { url?: string }): void => {
 	if (!url) {
 		return;
 	}
@@ -22,14 +22,14 @@ export const copyUrl = (url: string = window.location.href): void => {
 	if (navigator.clipboard) {
 		navigator.clipboard.writeText(url)
 			.then(() => {
-				showNotification(`<span><strong>Success! <span role='img' title='Party' class='icon icon-partyface'>🥳</span></strong> URL copied to clipboard: <span class='url'>${url}</span>`);
+				showNotification({ text: `<span><strong>Success! <span role='img' title='Party' class='icon icon-partyface'>🥳</span></strong> URL copied to clipboard: <span class='url'>${url}</span>` });
 			})
 			.catch(() => {
-				showNotification(`<span><strong>Copy URL:</strong></span> <span class='url'>${url}</span>`);
+				showNotification({ text: `<span><strong>Copy URL:</strong></span> <span class='url'>${url}</span>` });
 			});
 
 	} else {
-		showNotification(`<span><strong>Copy URL:</strong></span> <span class='url'>${url}</span>`);
+		showNotification({ text: `<span><strong>Copy URL:</strong></span> <span class='url'>${url}</span>` });
 	}
 
 	// Send copy event to GA.
@@ -40,24 +40,24 @@ export const copyUrl = (url: string = window.location.href): void => {
 
 /**
  * Displays the native sharing mechanism for the device if navigator.share is available, otherwise displays a notification with the share data.
- * 
- * @param {string} url URL to share. Defaults to window.location.href.
- * @param {string} title Title of website. Defaults to window.baseTitle. 
- * @param {string} text Text to share. Defaults to window.baseDescription.
+ * @param {Object} url The `shareUrl` function requires an object with the following properties:
+ * @param {string=} url.url URL to share. Defaults to window.location.href.
+ * @param {string=} url.title Title of website. Defaults to window.baseTitle. 
+ * @param {string=} url.text Text to share. Defaults to window.baseDescription.
  */
-export const shareUrl = (url: string = window.location.href, title: string = window.baseTitle, text: string = window.baseDescription): void => {
+export const shareUrl = ({ url = window.location.href, title = window.baseTitle, text = window.baseDescription } : { url?: string, title?: string, text?: string }): void => {
 	if (navigator.share) {
 		navigator.share({ title, url }).catch(error => console.warn(error));
 	} else {
 		const textEncoded = encodeURIComponent(text + ' ' + url);
-		showNotification(
-			`<a class='button facebook' href='https://www.facebook.com/sharer/sharer.php?u=${url}' title='Share on Facebook'><i class='fas fa-share-alt'></i>&nbsp;&nbsp;Facebook</a>` +
+		showNotification({
+      text: 			`<a class='button facebook' href='https://www.facebook.com/sharer/sharer.php?u=${url}' title='Share on Facebook'><i class='fas fa-share-alt'></i>&nbsp;&nbsp;Facebook</a>` +
 			`<a class='button twitter' href='https://twitter.com/intent/tweet?text=${textEncoded}' title='Share on Twitter'><i class='fas fa-share-alt'></i>&nbsp;&nbsp;Twitter</a>` +
 			`<a class='button email' href='mailto:?subject=Check+out+${title}!&body=${textEncoded}' title='Share on Email'><i class='fas fa-share-alt'></i>&nbsp;&nbsp;Email</a>` +
 			`<a class='button copy' href='#' title='Copy' data-url='${url}'><i class='fas fa-copy'></i>&nbsp;&nbsp;Copy</button>`,
-			'',
-			'notification-share'
-		);
+      cookieName: '',
+      className: 'notification-share'
+    });
 	}
 
 	// Send share event to GA.
@@ -90,11 +90,11 @@ export const setLinkEventListeners = (): void => {
 					return;
 				}
 	
-				shareUrl(
-					element.dataset.url ?? window.baseUrl,
-					element.dataset.title ?? window.baseTitle,
-					element.dataset.text ?? window.baseDescription
-				);
+				shareUrl({
+					url: element.dataset.url ?? window.baseUrl,
+					title: element.dataset.title ?? window.baseTitle,
+					text: element.dataset.text ?? window.baseDescription
+        });
 			});
 		});
 	}
@@ -118,7 +118,7 @@ export const setLinkEventListeners = (): void => {
 					return;
 				}
 	
-				copyUrl(element.dataset.url ?? window.baseUrl);
+				copyUrl({ url: element.dataset.url ?? window.baseUrl });
 			});
 		});
 	}

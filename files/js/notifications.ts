@@ -4,14 +4,15 @@ import { setLinkEventListeners } from "./urls";
 /**
  * Show notification.
  * 
- * @param {string} text Text to display in notification. Also accepts 'paypal-confirmation' to display PayPal confirmation text, or 'cookie' to display cookie consent text.
- * @param {string} cookieName Cookie name to set once notification is closed so that the notification does not display again for the user. Defaults to ''.
- * @param {string} className Class name to apply to notification element. Defaults to ''.
+ * @param {Object} notification The `showNotification` function requires an object with the following properties:
+ * @param {string} notification.text Text to display in notification. Also accepts 'paypal-confirmation' to display PayPal confirmation text, or 'cookie' to display cookie consent text.
+ * @param {string=} notification.cookieName Cookie name to set once notification is closed so that the notification does not display again for the user. Defaults to ''.
+ * @param {string=} notification.className Class name to apply to notification element. Defaults to ''.
  */
-export const showNotification = (text: string, cookieName: string = '', className: string = ''): void => {
+export const showNotification = ({ text, cookieName = '', className = '' } : { text: string, cookieName?: string, className?: string }): void => {
 
 	// Don't display notification if cookie is set.
-	if (cookieName && getCookie(cookieName)) {
+	if (cookieName && getCookie({name: cookieName})) {
 		return;
 	}
 
@@ -97,19 +98,19 @@ export const closeNotification = (): void => {
 	
 	// If notification has cookie data attribute set, set cookie after closing.
 	if (notificationContainer.dataset.cookie) {
-		setCookie(notificationContainer.dataset.cookie, true);
+		setCookie({ name: notificationContainer.dataset.cookie, value: true });
 		notificationContainer.removeAttribute('data-cookie');
 	}
 }
 
 /**
  * Show promo notification.
- * 
- * @param {string} text Text to display in notification.
- * @param {string} cookieName Cookie name to provide to showNotification(), so that the promo does not display again for the user. Defaults to the website URL with '-promo' appended.
- * @param {string} customIconSelector Selector for the promo icon, if one exists. If provided, the icon will be animated and a cookie will be set on click so that it only animates once.
+ * @param {Object} notification The `showPromo` function requires an object with the following properties:
+ * @param {string} notification.text Text to display in notification.
+ * @param {string=} notification.cookieName Cookie name to provide to showNotification(), so that the promo does not display again for the user. Defaults to the website URL with '-promo' appended.
+ * @param {string=} notification.customIconSelector Selector for the promo icon, if one exists. If provided, the icon will be animated and a cookie will be set on click so that it only animates once.
  */
-export const showPromo = (text: string, cookieName: string = `${window.baseUrl}-promo`, customIconSelector: string = 'nav .custom'): void => {
+export const showPromo = ({ text, cookieName = `${window.baseUrl}-promo`, customIconSelector = 'nav .custom' }: { text: string, cookieName?: string, customIconSelector?: string }): void => {
 
 	if (!text) {
 		return;
@@ -126,13 +127,13 @@ export const showPromo = (text: string, cookieName: string = `${window.baseUrl}-
 
 			element.classList.add('animate');
 			element.addEventListener('click', () => {
-				setCookie(`${cookieName}-icon`, true);
+				setCookie({ name: `${cookieName}-icon`, value: true });
 			});
 		}, 20000);
 	}
 
 	// Show the notification for the promo.
 	setTimeout(() => {
-		showNotification(text, cookieName);
+		showNotification({ text, cookieName });
 	}, 60000);
 }
